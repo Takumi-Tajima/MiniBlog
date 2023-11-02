@@ -1,20 +1,16 @@
-%h1 Listing microposts
+%h1 全体タイムライン
 
 %table
   %thead
     %tr
       %th Content
-      %th
-      %th
-      %th
 
   %tbody
     - @microposts.each do |micropost|
       %tr
         %td= micropost.content
+        %td= micropost.created_at
         %td= link_to 'Show', micropost
-        %td= link_to 'Edit', edit_micropost_path(micropost)
-        %td= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
