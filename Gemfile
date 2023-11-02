@@ -5,7 +5,7 @@ ruby "3.2.2"
 
 gem "rails", "~> 7.0.8"
 gem "bootsnap", require: false
-gem "bootstrap"
+gem 'bootstrap', '~> 5.3.2'
 gem "haml-rails", "~> 2.0"
 gem "importmap-rails"
 gem "pg"
