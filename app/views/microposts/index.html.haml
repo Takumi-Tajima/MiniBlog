@@ -10,7 +10,7 @@
     - @microposts.each do |micropost|
       %tr
         %td= micropost.content
-        %td= micropost.created_at
+        %td= micropost.created_at.to_s(:datetime_jp)
         %td= link_to 'Show', micropost
 
 %br
