@@ -1,7 +1,8 @@
-%h1 Editing micropost
+%h1 投稿を編集する
 
 = render 'form'
 
-= link_to 'Show', @micropost
-\|
-= link_to 'Back', microposts_path
+%p
+    = link_to 'Show', @micropost, class: "btn btn btn-primary"
+    |
+    = link_to 'Back', microposts_path, class: "btn btn-secondary"

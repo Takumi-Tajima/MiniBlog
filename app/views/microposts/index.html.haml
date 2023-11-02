@@ -1,18 +1,15 @@
-%p#notice= notice
-%h1 全体タイムライン
+.container
+  - if notice
+    #notice.alert.alert-info= notice
+  %h1 全体タイムライン
 
-%table
-  %thead
-    %tr
-      %th Content
+  - @microposts.each do |micropost|
+    .card.mb-3
+      .card-body
+        %p.card-text= micropost.content
+        %p.card-text 作成日: #{micropost.created_at.to_s(:datetime_jp)}
+        = link_to 'Show', micropost, class: "btn btn-primary"
 
-  %tbody
-    - @microposts.each do |micropost|
-      %tr
-        %td= micropost.content
-        %td= micropost.created_at.to_s(:datetime_jp)
-        %td= link_to 'Show', micropost
+  %br
 
-%br
-
-= link_to 'New Micropost', new_micropost_path
+  = link_to 'New Micropost', new_micropost_path, class: "btn btn-success"

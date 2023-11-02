@@ -1,11 +1,11 @@
-%p#notice= notice
+.container
+  - if notice
+    #notice.alert.alert-info= notice
 
-%p
-  %b Content:
-  = @micropost.content
+  %p
+    %b Content:
+    = @micropost.content
 
-= link_to 'Edit', edit_micropost_path(@micropost)
-
-= link_to 'Back', microposts_path
-
-= button_to  'Destroy', @micropost, method: :delete, data: { confirm: 'Are you sure?' }
+  = link_to 'Edit', edit_micropost_path(@micropost), class: "btn btn-primary"
+  = link_to 'Back', microposts_path, class: "btn btn-secondary"
+  = button_to 'Destroy', @micropost, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
