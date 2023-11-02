@@ -3,24 +3,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
-gem "bootstrap"
+gem "rails", "~> 7.0.8"
 gem "bootsnap", require: false
-gem "devise"
+gem "bootstrap"
 gem "haml-rails", "~> 2.0"
 gem "importmap-rails"
-gem "jbuilder"
 gem "pg"
 gem "puma", "~> 5.0"
-gem "rails", "~> 7.0.8"
-gem 'rubocop-rails', require: false
 gem 'sassc-rails'
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'sgcop', github: 'SonicGarden/sgcop'
 end
 
 group :development do
