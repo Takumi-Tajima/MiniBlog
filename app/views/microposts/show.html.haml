@@ -3,8 +3,11 @@
     #notice.alert.alert-info= notice
 
   %p
-    %b Content:
+    %b 内容:
     = @micropost.content
+  %p
+    %b 投稿日時:
+    = l @micropost.created_at
 
   = link_to 'Edit', edit_micropost_path(@micropost), class: "btn btn-primary"
   = link_to 'Back', microposts_path, class: "btn btn-secondary"
