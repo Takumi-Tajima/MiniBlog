@@ -1,6 +1,6 @@
 %h1 投稿を編集する
 
-= render 'form'
+= render 'form', micropost: @micropost
 
 %p
     = link_to 'Show', @micropost, class: "btn btn btn-primary"

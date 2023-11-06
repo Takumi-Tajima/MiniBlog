@@ -7,7 +7,7 @@
     .card.mb-3
       .card-body
         %p.card-text= micropost.content
-        %p.card-text 作成日: #{micropost.created_at.to_s(:datetime_jp)}
+        %p.card-text 投稿日: #{l micropost.created_at, format: :default}
         = link_to 'Show', micropost, class: "btn btn-primary"
 
   %br

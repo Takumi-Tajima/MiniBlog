@@ -106,10 +106,7 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
-    erb2haml (0.1.5)
-      html2haml
     erubi (1.12.0)
-    erubis (2.7.0)
     execjs (2.9.1)
     ffi (1.16.3)
     globalid (1.2.1)
@@ -123,11 +120,6 @@ GEM
       activesupport (>= 5.1)
       haml (>= 4.0.6)
       railties (>= 5.1)
-    html2haml (2.3.0)
-      erubis (~> 2.7.0)
-      haml (>= 4.0)
-      nokogiri (>= 1.6.0)
-      ruby_parser (~> 3.5)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -248,8 +240,6 @@ GEM
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
-    ruby_parser (3.20.3)
-      sexp_processor (~> 4.16)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -263,7 +253,9 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sexp_processor (4.17.0)
+    simple_form (5.3.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -307,7 +299,6 @@ DEPENDENCIES
   bootstrap (~> 5.3.2)
   capybara
   debug
-  erb2haml
   haml-rails (~> 2.0)
   importmap-rails
   pg
@@ -316,6 +307,7 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   sgcop!
+  simple_form
   sprockets-rails
   stimulus-rails
   turbo-rails

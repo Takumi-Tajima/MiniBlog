@@ -10,6 +10,7 @@ Bundler.require(*Rails.groups)
 
 module MiniBlog
   class Application < Rails::Application
-    config.time_zone = 'Tokyo'
+    config.load_defaults 7.0
+    config.i18n.default_locale = :ja
   end
 end

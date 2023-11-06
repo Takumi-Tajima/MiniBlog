@@ -1,12 +1,13 @@
 .container
-  = form_for @micropost do |f|
-    - if @micropost.errors.any?
+  = simple_form_for micropost do |f|
+    - if micropost.errors.any?
       #error_explanation.alert.alert-danger
-        %h2= "#{pluralize(@micropost.errors.count, "error")} prohibited this micropost from being saved:"
+        %h2= "#{pluralize(micropost.errors.count, "error")} prohibited this micropost from being saved:"
         %ul
-          - @micropost.errors.full_messages.each do |message|
+          - micropost.errors.full_messages.each do |message|
             %li= message
 
     .form-group
-      = f.label :content
-      = f.text_area :content, class: "form-control"
+      = f.input :content, input_html: { maxlength: 140 }, required: false
+    .actions
+      = f.button :submit, class: "btn-primary"
