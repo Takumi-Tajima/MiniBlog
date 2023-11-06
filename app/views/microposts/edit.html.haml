@@ -3,6 +3,6 @@
 = render 'form', micropost: @micropost
 
 %p
-    = link_to 'Show', @micropost, class: "btn btn btn-primary"
+    = link_to 'Show', micropost_path(@micropost), class: "btn btn btn-primary"
     |
     = link_to 'Back', microposts_path, class: "btn btn-secondary"
