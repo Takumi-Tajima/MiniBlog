@@ -18,7 +18,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost = Micropost.new(micropost_params)
     if @micropost.save
-      redirect_to @micropost, notice: '新規投稿を作成しました。'
+      redirect_to @micropost, success: '新規投稿を作成しました。'
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class MicropostsController < ApplicationController
 
   def update
     if @micropost.update(micropost_params)
-      redirect_to @micropost, notice: '投稿を更新しました。', status: :see_other
+      redirect_to @micropost, success: '投稿を更新しました。', status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy!
-    redirect_to microposts_url, notice: '投稿を削除しました。', status: :see_other
+    redirect_to microposts_url, success: '投稿を削除しました。', status: :see_other
   end
 
   private
