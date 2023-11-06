@@ -33,7 +33,7 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-    @micropost.destroy
+    @micropost.destroy!
     redirect_to microposts_url, notice: '投稿を削除しました。', status: :see_other
   end
 
