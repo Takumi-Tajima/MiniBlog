@@ -253,6 +253,9 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simple_form (5.3.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -293,7 +296,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bootstrap
+  bootstrap (~> 5.3.2)
   capybara
   debug
   haml-rails (~> 2.0)
@@ -304,6 +307,7 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   sgcop!
+  simple_form
   sprockets-rails
   stimulus-rails
   turbo-rails
