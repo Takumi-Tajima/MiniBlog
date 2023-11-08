@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :micropost
+  has_many :microposts
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
