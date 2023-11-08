@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users
   root to: 'microposts#index'
+  devise_for :users
+  resources :users, only: %i[index show]
   resources :microposts
 end
