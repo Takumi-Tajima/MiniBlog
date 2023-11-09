@@ -2,6 +2,7 @@
 
 class MicropostsController < ApplicationController
   before_action :set_micropost, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @microposts = Micropost.order(created_at: :desc)
