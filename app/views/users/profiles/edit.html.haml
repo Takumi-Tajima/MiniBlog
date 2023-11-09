@@ -1,2 +1,8 @@
-%h1 Users::Profiles#edit
-%p Find me in app/views/users/profiles/edit.html.haml
+= simple_form_for @user, url: user_profile_path do |f|
+  .form-group
+    = f.input :name
+    .form-group
+    = f.input :profile, input_html: { maxlength: 200 }
+  .actions
+    = f.button :submit, class: "btn-primary"
+  = link_to '詳細へ戻る', user_profile_path, class: "btn btn-secondary"
