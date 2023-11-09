@@ -3,6 +3,7 @@
 class MicropostsController < ApplicationController
   before_action :set_micropost, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: %i[edit update destroy]
 
   def index
     @microposts = Micropost.order(created_at: :desc)
@@ -47,4 +48,10 @@ class MicropostsController < ApplicationController
   def micropost_params
     params.require(:micropost).permit(:content)
   end
+
+  def correct_user
+    @micropost = current_user.microposts.find_by(id: params[:id])
+    redirect_to root_url, warning: '本人ユーザーのみが可能な操作です', status: :see_other if @micropost.nil?
+  end
+
 end
