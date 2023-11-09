@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   }
   resources :microposts
   resources :users, only: %i[index show]
+  resource :user do
+    resource :profile, only: %i[edit update], module: :users
+  end
 end
