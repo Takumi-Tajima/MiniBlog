@@ -7,6 +7,6 @@
     = l @micropost.created_at
 
   - if current_user == @micropost.user
-    = link_to 'Edit', edit_micropost_path(@micropost), class: "btn btn-primary"
-    = button_to 'Destroy', @micropost, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
+    = link_to 'Edit', edit_user_micropost_path(@micropost), class: "btn btn-primary"
+    = button_to 'Destroy', user_micropost_path(@micropost), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
   = link_to 'Back', microposts_path, class: "btn btn-secondary"
