@@ -11,3 +11,4 @@
     = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
   .form-actions
     = f.button :submit, "Log in"
+    = link_to "Sign_up", new_user_registration_path, class: "btn btn-primary"
