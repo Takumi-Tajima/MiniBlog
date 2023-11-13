@@ -7,6 +7,7 @@ ruby '3.2.2'
 
 gem 'rails', '~> 7.0.8'
 
+gem 'activerecord-import'
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.3.2'
 gem 'devise'
