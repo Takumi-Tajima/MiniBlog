@@ -120,8 +120,6 @@ GEM
     faker (3.2.2)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
-    gimei (1.2.0)
-      romaji
     globalid (1.2.1)
       activesupport (>= 6.1)
     haml (6.2.3)
@@ -238,8 +236,6 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.6)
-    romaji (0.2.4)
-      rake (>= 0.8.0)
     rubocop (1.57.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
