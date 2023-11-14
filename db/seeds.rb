@@ -1,7 +1,7 @@
 users = []
 
 30.times do |n|
-  name = Faker::Name.unique.name.downcase.gsub(/\s+/, '')  # スペースを削除
+  name = Faker::Name.unique.name.gsub(/\s+/, '')  # スペースを削除
   email = Faker::Internet.unique.email
   profile = Faker::Lorem.sentence
   password = "foobarpassword"
