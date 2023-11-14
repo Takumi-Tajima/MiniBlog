@@ -16,7 +16,7 @@ class MicropostsController < ApplicationController
   def edit; end
 
   def create
-    @micropost = Micropost.new(micropost_params)
+    @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       redirect_to @micropost, success: '新規投稿を作成しました。'
     else
