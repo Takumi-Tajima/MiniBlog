@@ -7,4 +7,5 @@
         %p.card-text
           = link_to user.name, user_path(user), class: "btn btn-link"
 
+  = paginate @users
   = link_to 'TOPへ戻る', root_path, class: "btn btn-success"

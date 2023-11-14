@@ -13,6 +13,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'haml-rails', '~> 2.0'
 gem 'importmap-rails'
+gem 'kaminari'
 gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'sassc-rails'
@@ -23,6 +24,8 @@ gem 'turbo-rails'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker'
+  gem 'gimei'
   gem 'sgcop', github: 'SonicGarden/sgcop'
 end
 
