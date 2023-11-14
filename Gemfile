@@ -10,6 +10,7 @@ gem 'rails', '~> 7.0.8'
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.3.2'
 gem 'devise'
+gem 'devise-i18n'
 gem 'haml-rails', '~> 2.0'
 gem 'importmap-rails'
 gem 'kaminari'

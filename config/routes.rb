@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   root to: 'microposts#index'
   devise_for :users, controllers: {
@@ -8,4 +6,7 @@ Rails.application.routes.draw do
   }
   resources :microposts
   resources :users, only: %i[index show]
+  resource :user do
+    resource :profile, only: %i[show edit update], module: :users
+  end
 end
