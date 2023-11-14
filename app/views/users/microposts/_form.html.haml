@@ -1,5 +1,5 @@
 .container
-  = simple_form_for micropost do |f|
+  = simple_form_for [:user, micropost] do |f|
     - if micropost.errors.any?
       #error_explanation.alert.alert-danger
         %h2= "#{pluralize(micropost.errors.count, "error")} prohibited this micropost from being saved:"

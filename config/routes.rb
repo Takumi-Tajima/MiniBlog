@@ -4,9 +4,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  resources :microposts
+  resources :microposts, only: %i[index show]
   resources :users, only: %i[index show]
   resource :user do
     resource :profile, only: %i[show edit update], module: :users
+    resources :microposts, only: %i[new edit create update destroy], module: :users
   end
 end
