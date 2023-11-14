@@ -1,7 +1,17 @@
-100.times do |n|
-  User.create!(
-    name: Faker::Name.unique.name,
-    email: Faker::Internet.unique.email,
-    password: "foobarpassword"
+users = []
+
+30.times do |n|
+  name = Faker::Name.unique.name.downcase.gsub(/\s+/, '')  # スペースを削除
+  email = Faker::Internet.unique.email
+  profile = Faker::Lorem.sentence
+  password = "foobarpassword"
+
+  users << User.new(
+    name: name,
+    email: email,
+    profile: profile,
+    password: password
   )
 end
+
+User.import users
