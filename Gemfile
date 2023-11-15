@@ -24,8 +24,9 @@ gem 'turbo-rails'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
   gem 'faker'
-  gem 'gimei'
+  gem 'rspec-rails'
   gem 'sgcop', github: 'SonicGarden/sgcop'
 end
 
