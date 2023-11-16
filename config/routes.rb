@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :users do
+    get 'relationships/create'
+    get 'relationships/destroy'
+  end
   root to: 'microposts#index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
