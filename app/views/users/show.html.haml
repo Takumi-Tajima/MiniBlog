@@ -6,4 +6,5 @@
     %b プロフィール:
     = @user.profile
 
+  = button_to 'フォローする', user_relationships_path(@user), method: :post, class: "btn btn-primary"
   = link_to 'ユーザー一覧へ戻る', users_path, class: "btn btn-secondary"
