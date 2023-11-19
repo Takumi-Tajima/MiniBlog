@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resource :user do
     resource :profile, only: %i[show edit update], module: :users
     resources :microposts, only: %i[new edit create update destroy], module: :users
-    resource :relationships, only: %i[create destroy], module: :users
+    resources :relationships, only: %i[create destroy], module: :users
   end
 end
