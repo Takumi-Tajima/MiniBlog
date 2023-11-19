@@ -6,5 +6,12 @@
     %b プロフィール:
     = @user.profile
 
-  = button_to 'フォローする', user_relationships_path(@user), method: :post, class: "btn btn-primary"
+
+
+  = form_with(model: current_user.active_relationships.build, url: user_relationships_path) do |f|
+    = hidden_field_tag :followed_id, @user.id
+    = f.submit 'フォローする', class: "btn btn-primary"
+  = form_with(model: current_user.active_relationships.build, url: user_relationship_path, method: :delete) do |f|
+    = hidden_field_tag :followed_id, @user.id
+    = f.submit 'フォロー解除', class: "btn btn-danger"
   = link_to 'ユーザー一覧へ戻る', users_path, class: "btn btn-secondary"
