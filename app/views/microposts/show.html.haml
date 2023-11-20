@@ -5,6 +5,9 @@
   %p
     %b 投稿日時:
     = l @micropost.created_at
+  %p
+    %b 投稿者:
+    = link_to @micropost.user.name, user_path(@micropost.user)
 
   - if current_user == @micropost.user
     = link_to 'Edit', edit_user_micropost_path(@micropost), class: "btn btn-primary"
