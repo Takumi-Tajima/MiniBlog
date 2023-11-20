@@ -6,7 +6,5 @@
     %b プロフィール:
     = @user.profile
 
-  = button_to 'フォローする', user_relationships_path, params: { followed_id: @user.id }, class: "btn btn-primary"
-  = button_to 'フォロー解除', user_relationship_path, method: :delete, params: { followed_id: @user.id }, class: "btn btn-danger"
-
+  = render 'shared/btn', user: @user
   = link_to 'ユーザー一覧へ戻る', users_path, class: "btn btn-secondary"
