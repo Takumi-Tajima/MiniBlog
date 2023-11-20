@@ -1,21 +1,23 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[show followings followers]
 
   def index
     @users = User.order(created_at: :desc).page(params[:page])
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
-  # todo - User.find(params[:id])を共通化してもいいかも
+  def show; end
+
   def followings
-		user = User.find(params[:id])
-		@users = user.followings
-	end
+    @users = @user.followings
+  end
 
   def followers
-		user = User.find(params[:id])
-		@users = user.followers
-	end
+    @users = @user.followers
+  end
 
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
