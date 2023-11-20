@@ -10,4 +10,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :profile, length: { maximum: 200 }
   paginates_per 10
+
+  def following?(user)
+    followings.include?(user)
+  end
 end
