@@ -4,6 +4,10 @@ class Users::MicropostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_micropost, only: %i[edit update destroy]
 
+  def index
+    @microposts = Micropost.where(user_id: [*current_user.following_ids])
+  end
+
   def new
     @micropost = Micropost.new
   end
