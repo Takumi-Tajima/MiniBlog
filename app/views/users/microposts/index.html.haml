@@ -1,8 +1,7 @@
 .container
-  %h1 全体タイムライン
+  %h1 フォロー中の投稿
 
-  - if user_signed_in?
-    = link_to "フォロー中", user_microposts_path, class: 'btn btn-info mb-3'
+  = link_to "タイムライン", root_path, class: 'btn btn-info mb-3'
 
   - @microposts.each do |micropost|
     .card.mb-3
