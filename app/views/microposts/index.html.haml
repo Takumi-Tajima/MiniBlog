@@ -2,7 +2,7 @@
   %h1 全体タイムライン
 
   - if user_signed_in?
-    = link_to "フォロー中", user_microposts_path, class: 'btn btn-info mb-3'
+    = link_to "フォローしている人の投稿", user_microposts_path, class: 'btn btn-info mb-3'
 
   - @microposts.each do |micropost|
     .card.mb-3
