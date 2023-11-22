@@ -5,7 +5,7 @@ class Users::MicropostsController < ApplicationController
   before_action :set_micropost, only: %i[edit update destroy]
 
   def index
-    @microposts = Micropost.where(user_id: [*current_user.following_ids])
+    @microposts = current_user.feeds.order(updated_at: :desc)
   end
 
   def new
