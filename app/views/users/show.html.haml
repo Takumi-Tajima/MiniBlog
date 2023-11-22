@@ -1,14 +1,14 @@
 .container
   %p
-    %b 名前:
+    %strong 名前:
     = @user.name
   %p
-    %b プロフィール:
+    %strong プロフィール:
     = @user.profile
   %p
-    %b フォロー
+    %strong フォロー
     = link_to @user.followings.count , followings_user_path(@user)
-    %b フォロワー
+    %strong フォロワー
     = link_to @user.followers.count , followers_user_path(@user)
 
   = render 'shared/btn', user: @user
