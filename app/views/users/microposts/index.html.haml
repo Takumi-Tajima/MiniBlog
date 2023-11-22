@@ -1,0 +1,7 @@
+%h1 フォロー中の投稿
+
+= link_to "タイムライン", root_path, class: 'btn btn-info mb-3'
+
+= render 'shared/microposts_index', microposts: @microposts
+
+= link_to 'New Micropost', new_user_micropost_path, class: "btn btn-success"
