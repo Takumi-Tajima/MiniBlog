@@ -10,4 +10,11 @@ RSpec.describe 'Users', type: :system do
       expect(page).to have_selector('nav.navbar a', count: 4)
     end
   end
+
+  context 'ユーザーがログインしていない場合' do
+    it 'ユーザー詳細画面にアクセスするとsign in画面にリダイレクトされること' do
+      visit user_path(user)
+      expect(page).to have_current_path new_user_session_path
+    end
+  end
 end
