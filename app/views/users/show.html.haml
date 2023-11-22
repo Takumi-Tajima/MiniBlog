@@ -1,16 +1,15 @@
-.container
-  %p
-    %strong 名前:
-    = @user.name
-  %p
-    %strong プロフィール:
-    = @user.profile
-  %p
-    %strong フォロー
-    = link_to @user.followings.count , followings_user_path(@user)
-    %strong フォロワー
-    = link_to @user.followers.count , followers_user_path(@user)
+%p
+  %strong 名前:
+  = @user.name
+%p
+  %strong プロフィール:
+  = @user.profile
+%p
+  %strong フォロー
+  = link_to @user.followings.count , followings_user_path(@user)
+  %strong フォロワー
+  = link_to @user.followers.count , followers_user_path(@user)
 
-  = render 'shared/btn', user: @user
-  = link_to 'ユーザー一覧へ戻る', users_path, class: "btn btn-secondary"
-  = link_to '投稿一覧へ戻る', root_path, class: "btn btn-success"
+= render 'shared/btn', user: @user
+= link_to 'ユーザー一覧へ戻る', users_path, class: "btn btn-secondary"
+= link_to '投稿一覧へ戻る', root_path, class: "btn btn-success"

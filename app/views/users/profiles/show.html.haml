@@ -1,13 +1,12 @@
-.container
-  %p
-    %strong 名前:
-    = current_user.name
-  %p
-    %strong プロフィール:
-    = current_user.profile
-    / todo 上記後でパーシャルにする
+%p
+  %strong 名前:
+  = current_user.name
+%p
+  %strong プロフィール:
+  = current_user.profile
+  / todo 上記後でパーシャルにする
 
-  = link_to '名前/プロフィールを編集', edit_user_profile_path, class: "btn btn-info"
-  = link_to 'メール/パスワードを編集', edit_user_registration_path, class: "btn btn-secondary"
+= link_to '名前/プロフィールを編集', edit_user_profile_path, class: "btn btn-info"
+= link_to 'メール/パスワードを編集', edit_user_registration_path, class: "btn btn-secondary"
 
-  = link_to 'TOPへ', root_path, class: "btn btn-secondary"
+= link_to 'TOPへ', root_path, class: "btn btn-secondary"
