@@ -1,12 +1,15 @@
 .container
   %p
-    %b 内容:
+    %strong 内容:
     = @micropost.content
   %p
-    %b 投稿日時:
+    %strong 投稿日時:
     = l @micropost.created_at
   %p
-    %b 投稿者:
+    %strong 更新日時:
+    = l @micropost.updated_at
+  %p
+    %strong 投稿者:
     = link_to @micropost.user.name, user_path(@micropost.user)
 
   - if current_user == @micropost.user

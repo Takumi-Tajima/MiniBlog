@@ -9,6 +9,7 @@
       .card-body
         %p.card-text= micropost.content
         %p.card-text 投稿日: #{l micropost.created_at}
+        %p.card-text 更新日: #{l micropost.updated_at}
         %p.card-text
           投稿者:
           = link_to micropost.user.name, user_path(micropost.user)
