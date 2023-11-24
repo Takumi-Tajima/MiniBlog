@@ -12,9 +12,11 @@ RSpec.describe '投稿機能', type: :system do
   it '新規投稿ができる' do
     visit new_user_micropost_path
     fill_in 'Content', with: 'hogehogehoge'
-    click_on 'Create Micropost'
-    expect(page).to have_content '新規投稿を作成しました。'
-    expect(page).to have_content 'hogehogehoge'
+    expect {
+      click_on 'Create Micropost'
+      expect(page).to have_content '新規投稿を作成しました。'
+      expect(page).to have_content 'hogehogehoge'
+    }.to change(Micropost, :count).by(+1)
   end
 
   it '投稿時に何も入力しないとエラーが発生する' do
@@ -34,13 +36,12 @@ RSpec.describe '投稿機能', type: :system do
     end
 
     it '削除できること' do
-      micropost_count_before = Micropost.count
       visit micropost_path(micropost)
       expect(page).to have_content 'Destroy'
-      click_on 'Destroy'
-      expect(page).to have_content '投稿を削除しました。'
-      expect(Micropost.count).to eq(micropost_count_before - 1)
-      expect(Micropost.where(id: micropost.id)).to be_empty
+      expect {
+        click_on 'Destroy'
+        expect(page).to have_content '投稿を削除しました。'
+      }.to change(Micropost, :count).by(-1)
     end
   end
 
