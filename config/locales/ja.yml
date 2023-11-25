@@ -2,3 +2,8 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
+  activerecord:
+    errors:
+      models:
+        micropost:
+              blank: "は必須項目です。"
