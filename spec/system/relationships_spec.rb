@@ -1,16 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe "フォロー機能", type: :system do
-  let(:user) { FactoryBot.create(:user)}
+RSpec.describe 'フォロー機能', type: :system do
+  let!(:taro) { FactoryBot.create(:user, name: 'taro') }
+  let!(:hanako) { FactoryBot.create(:user, name: 'hanako') }
 
   before do
-  end
-
-  xit '新規投稿ができる' do
+    sign_in taro
   end
 
   context '他人のユーザーページのとき' do
-    xit 'フォローできること' do
+    it 'フォローできること' do
+      visit user_path(hanako)
+      expect {
+        click_on 'フォローする'
+      }.to change(taro.followings, :count).by(1)
     end
 
     xit 'フォロー解除できること' do
