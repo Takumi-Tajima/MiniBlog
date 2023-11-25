@@ -12,6 +12,14 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 200 }
   paginates_per 10
 
+  def follow(other_user)
+    followings << other_user unless self == other_user
+  end
+
+  def unfollow(other_user)
+    followings.delete(other_user)
+  end
+
   def following?(user)
     followings.include?(user)
   end
