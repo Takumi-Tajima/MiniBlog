@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe '投稿機能', type: :system do
-  let!(:user) { FactoryBot.create(:user) }
-  let!(:other_user) { FactoryBot.create(:user) }
-  let!(:micropost) { FactoryBot.create(:micropost, user: user) }
-  let!(:other_micropost) { FactoryBot.create(:micropost, user: other_user) }
+  # let!(:user) { FactoryBot.create(:user) }
+  let!(:taro) { FactoryBot.create(:user, name: 'taro') }
+  let!(:hanako) { FactoryBot.create(:user, name: 'hanako') }
+  let!(:taro_micropost) { FactoryBot.create(:micropost, user: taro) }
+  let!(:hanako_micropost) { FactoryBot.create(:micropost, user: hanako) }
   before do
-    sign_in user
+    sign_in taro
   end
 
   it '新規投稿ができる' do
@@ -28,7 +29,7 @@ RSpec.describe '投稿機能', type: :system do
 
   context '自分の投稿のとき' do
     it '編集できること' do
-      visit micropost_path(micropost)
+      visit micropost_path(taro_micropost)
       click_on 'Edit'
       fill_in 'Content', with: '編集したよ'
       click_on 'Update Micropost'
@@ -36,7 +37,7 @@ RSpec.describe '投稿機能', type: :system do
     end
 
     it '削除できること' do
-      visit micropost_path(micropost)
+      visit micropost_path(taro_micropost)
       expect(page).to have_content 'Destroy'
       expect {
         click_on 'Destroy'
@@ -47,12 +48,12 @@ RSpec.describe '投稿機能', type: :system do
 
   context '他人の投稿のとき' do
     it '編集できないこと' do
-      visit micropost_path(other_micropost)
+      visit micropost_path(hanako_micropost)
       expect(page).to_not have_content('Edit')
     end
 
     it '削除できないこと' do
-      visit micropost_path(other_micropost)
+      visit micropost_path(hanako_micropost)
       expect(page).to_not have_content('Destroy')
     end
   end
