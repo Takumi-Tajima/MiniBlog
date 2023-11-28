@@ -5,12 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: Mini_blog_pg
+  database: Mini_blog_development
 
 test:
   <<: *default
-  database: Mini_blog_pg
+  database: Mini_blog_test
 
 production:
   <<: *default
-  database: Mini_blog_pg
+  database: Mini_blog_production
