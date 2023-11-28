@@ -35,15 +35,19 @@ RSpec.describe 'フォロー機能', type: :system do
     it 'フォロー一覧が表示される' do
       taro.follow(hanako)
       taro.follow(cocoro)
-      followings_user_path(taro)
-      expect(taro.followers.sort_by(&:updated_at)).to eq(hanako.followings)
+      visit followings_user_path(taro)
+      expect(taro.followings.sort_by(&:updated_at)).to eq(taro.followings)
+      expect(page).to have_link 'hanako', href: user_path(hanako)
+      expect(page).to have_link 'cocoro', href: user_path(cocoro)
     end
 
     it 'フォロワー一覧が表示される' do
       taro.follow(hanako)
       cocoro.follow(hanako)
-      followers_user_path(hanako)
+      visit followers_user_path(hanako)
       expect(hanako.followers.sort_by(&:updated_at)).to eq(hanako.followers)
+      expect(page).to have_link 'taro', href: user_path(taro)
+      expect(page).to have_link 'cocoro', href: user_path(cocoro)
     end
   end
 
