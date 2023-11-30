@@ -37,3 +37,6 @@
 
 # .dio is ER
 db.dio
+
+# github
+.github/workflows

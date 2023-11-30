@@ -37,6 +37,7 @@ end
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'simplecov'
 end
 
 gem "dockerfile-rails", ">= 1.5", :group => :development
